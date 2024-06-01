@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+    <!-- Agrega los estilos de Bootstrap -->
+    <link href="../css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../recursos/css/ejercicio1.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Ejercicio Thats</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex justify-content-center w-100 " id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="ejercicio1.html">Ejercicio 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="ejercicio2.html">Ejercicio 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ejercicio3.html">Ejercicio 3</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="row text-center mt-4 d-flex justify-content-center">
+        <div class="curso_contenedor col-9">
+            <h1>Listando desde un Objeto</h1>
+            <div class="row" id="userCardsContainer">
+
+                <!-- Los cards se agregarán aquí dinámicamente -->
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const users = [
+            {
+                name: 'Matematica',
+                avatar: '../recursos/img/matematica.jpeg',
+            },
+            {
+                name: 'Leonel Messi',
+                avatar: '../recursos/img/messi.jpg',
+            },
+            {
+                name: 'Programación',
+                avatar: '../recursos/img/programacion.jpg',
+            },
+            {
+                name: 'Fiesta',
+                avatar: '../recursos/img/fiesta.jpg',
+            },
+            {
+                name: 'Oregano',
+                avatar: '../recursos/img/oregano.jpeg',
+            },
+            {
+                name: 'Rap',
+                avatar: '../recursos/img/rap.jpg',
+            },
+        ];
+
+        // Obtener el contenedor donde se mostrarán los cards
+        const userCardsContainer = document.getElementById('userCardsContainer');
+
+        // Mapear cada usuario a un elemento HTML de card de Bootstrap
+        const userCards = users.map(user => `
+  <div class="col-md-4 mb-4">
+    <div class="card d-flex justify-content-center">
+        <div class="col-12">
+            <h5 class="card-title">${user.name}</h5>
+            <img src="${user.avatar}" class="" alt="" width="100">
+        </div>
+    </div>
+  </div>
+`);
+
+        // Agregar los cards al contenedor
+        userCardsContainer.innerHTML = userCards.join('');
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio1</title>
+    <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../recursos/css/ejercicio1.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Ejercicio Thats</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex justify-content-center w-100 " id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="ejercicio1.html">Ejercicio 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ejercicio2.html">Ejercicio 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ejercicio3.html">Ejercicio 3</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="row text-center mt-4 d-flex justify-content-center">
+        <h1>Ejercicio 1</h1>
+        <div class="curso_contenedor col-9">
+            <div>
+                <h1>filter()</h1>
+            </div>
+            <div>
+                <h5>Recorre el array y retorna un nuevo array con aquellos elementos que pasen una determinada
+                    condición.</h5>
+            </div>
+            <img src="../recursos/img/filter.png" class="mt-3 " alt="">
+            <button class="btn-primary btn mt-3 " onclick="Mostrar()">Mostrar respuesta</button>
+            <h1 id="visualizar"></h1>
+        </div>
+        <div class="curso_contenedor col-9">
+            <div>
+                <h1>reduce()</h1>
+            </div>
+            <div>
+                <h5>Aplica una función a un acumulador y a cada valor de una array (de izquierda a derecha) para
+                    reducirlo a un único valor.</h5>
+            </div>
+            <img class="mt-3 " src="../recursos/img/reduce.png" alt="">
+            <button class="btn-primary btn mt-3 " onclick="MostrarReduce()">Mostrar respuesta</button>
+            <h1 id="ver"></h1>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    function Mostrar() {
+        const contenedor_tabla = document.getElementById('visualizar');
+        const array = [1, 2, 3, 4, 5, 6, 7, 9]
+        const filter = array.filter(element => element == 3 || element == 5 || element == 8)
+        contenedor_tabla.innerHTML = 'Respuesta ' + filter;
+    }
+
+    function MostrarReduce() {
+        const contenedor = document.getElementById('ver');
+        const array = [11, 12, 3, 25, 3]
+        const reduce = array.reduce((acumulacion, array) => acumulacion + array)
+        contenedor.innerHTML = 'Respuesta ' + reduce;
+    }
+    
+</script>
+
+</html>
